@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рассчет пролетов</title>
+    <script src="/index.js"></script>
+
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <main>
+        <form onsubmit="event.preventDefault(); getPasses();">
+            <label for="latitude">Широта:</label>
+            <input type="text" id="latitude" name="latitude" required><br>
+
+            <label for="longitude">Долгота:</label>
+            <input type="text" id="longitude" name="longitude" required><br>
+
+            <label for="altitude">Высота:</label>
+            <input type="text" id="altitude" name="altitude"><br>
+
+            <label for="altitude">Станция:</label>
+            <select id="station" class="station">
+                <option value="FY-3A">FY-3A</option>
+                <option value="FY-3B">FY-3B</option>
+                <option value="FY-3C">FY-3C</option>
+                <option value="FY-3D">FY-3D</option>
+                <option value="Metop-A">Metop-A</option>
+                <option value="Metop-B">Metop-B</option>
+                <option value="Metop-C">Metop-C</option>
+                <option value="NOAA-18">NOAA-18</option>
+                <option value="NOAA-19">NOAA-19</option>
+            </select>
+
+            <button id="sumbit-button" type="submit">Рассчитать</button>
+        </form>
+
+        <div id="results" class="results"></div>
+    </main>
+</body>
+</html>

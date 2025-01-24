@@ -1,0 +1,16 @@
+services:
+  flask:
+    build: .
+    command: python -m gunicorn --bind=0.0.0.0:8000 app:app -w=4
+    ports:
+      - 8000:8000
+    stop_signal: SIGINT
+    depends_on: []
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  web:
+    build: .
+    command: python -m http.server
+    stop_signal: SIGINT
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
